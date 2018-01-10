@@ -105,6 +105,13 @@ public class WidgetServiceProvider extends Service implements ConsultaPresenter 
             remoteViews.setTextViewText(R.id.txtvalor, "R$ " + valor.getValor_real());
             remoteViews.setViewVisibility(R.id.btreload, View.VISIBLE);
 
+            Float crescimento24 = Float.parseFloat(valor.getPercent_change_24h());
+            if(crescimento24>0){
+                remoteViews.setTextColor(R.id.txtcrescimento, getResources().getColor(R.color.verde));
+            }else{
+                remoteViews.setTextColor(R.id.txtcrescimento, getResources().getColor(R.color.vermelho));
+            }
+
             PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 0, clickIntent, PendingIntent.FLAG_UPDATE_CURRENT);
             remoteViews.setOnClickPendingIntent(R.id.btreload, pendingIntent);
             appWidgetManager.updateAppWidget(widgetId, remoteViews);

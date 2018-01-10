@@ -12,29 +12,43 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <meta-data
+            android:name="DATABASE"
+            android:value="cotacaoraiblock.db" />
+        <meta-data
+            android:name="VERSION"
+            android:value="1" />
+        <meta-data
+            android:name="QUERY_LOG"
+            android:value="true" />
+        <meta-data
+            android:name="DOMAIN_PACKAGE_NAME"
+            android:value="com.thiagosalper.cotacaoraiblocks.model" />
 
         <service
             android:name=".services.WidgetServiceProvider"
             android:enabled="true"
             android:exported="true" />
 
-        <receiver android:name=".WidgetProvider"  >
+        <receiver android:name=".WidgetProvider">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
-            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_info" />
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_info" />
         </receiver>
 
-        <activity
-            android:name="com.thiagosalper.cotacaoraiblocks.MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.thiagosalper.cotacaoraiblocks.ConfigActivity"></activity>
+        <activity android:name=".EnderecosActivity" />
+        <activity android:name=".EnderecosAddActivity"></activity>
     </application>
 
 </manifest>

@@ -6,6 +6,8 @@ import android.os.Handler;
 import android.os.Looper;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -29,6 +31,7 @@ public class MainActivity extends AppCompatActivity
     @BindView(R.id.txtcotacao_venda) TextView txtcotacao_venda;
     @BindView(R.id.txtdolar2) TextView txtdolar;
     @BindView(R.id.txtcrescimento) TextView txtcrescimento;
+    @BindView(R.id.txtporcento24) TextView txtporcento24;
     @BindView(R.id.txtprecobtc) TextView txtprecobtc;
     @BindView(R.id.btreload) Button btreload;
     private ConsultaPresenter contexto = this;
@@ -40,6 +43,9 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
 
         ButterKnife.bind(this);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        getSupportActionBar().setTitle("Cotação RaiBlocks");
     
         consulta = new ConsultaApi();
         consulta.busca(contexto);
@@ -55,6 +61,26 @@ public class MainActivity extends AppCompatActivity
         };
         handler.postDelayed(runnable, 30000);
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_home, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        int id = item.getItemId();
+//        if(id==android.R.id.home){
+//            onBackPressed();
+//            return true;
+//        }else
+        if(id==R.id.action_endereco){
+            startActivity(new Intent(this, EnderecosActivity.class));
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -78,12 +104,21 @@ public class MainActivity extends AppCompatActivity
         txtprecobtc.setText(moeda.getPrice_btc());
         txtdolar.setText("$ "+moeda.getPrice_usd());
         txtcrescimento.setText(moeda.getPercent_change_1h()+"%");
+        txtporcento24.setText(moeda.getPercent_change_24h()+"%");
         Float crescimento = Float.parseFloat(moeda.getPercent_change_1h());
         if(crescimento>0){
             txtcrescimento.setTextColor(getResources().getColor(R.color.verde));
         }else{
             txtcrescimento.setTextColor(getResources().getColor(R.color.vermelho));
         }
+
+        Float crescimento24 = Float.parseFloat(moeda.getPercent_change_24h());
+        if(crescimento24>0){
+            txtporcento24.setTextColor(getResources().getColor(R.color.verde));
+        }else{
+            txtporcento24.setTextColor(getResources().getColor(R.color.vermelho));
+        }
+
         btreload.setVisibility(View.VISIBLE);
     }
 
