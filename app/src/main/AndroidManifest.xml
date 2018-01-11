@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
+        android:name=".CotacaoRaiBlocks"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -48,7 +49,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".EnderecosActivity" />
-        <activity android:name=".EnderecosAddActivity"></activity>
+        <activity android:name=".EnderecosAddActivity" />
     </application>
 
 </manifest>

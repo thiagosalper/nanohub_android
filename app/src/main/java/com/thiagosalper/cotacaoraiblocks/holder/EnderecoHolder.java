@@ -29,6 +29,7 @@ public class EnderecoHolder extends RecyclerView.ViewHolder {
     @BindView(R.id.txtnome) public TextView txtnome;
     @BindView(R.id.txtendereco) public TextView txtendereco;
     @BindView(R.id.btremove) public ImageButton btremove;
+    @BindView(R.id.btshare) public ImageButton btshare;
 
     public Endereco endereco;
 
@@ -70,6 +71,18 @@ public class EnderecoHolder extends RecyclerView.ViewHolder {
                 });
 
                 alert.show();
+            }
+        });
+
+        btshare.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Context c = v.getContext();
+                // compartilhar
+                Intent intent2 = new Intent(); intent2.setAction(Intent.ACTION_SEND);
+                intent2.setType("text/plain");
+                intent2.putExtra(Intent.EXTRA_TEXT, ""+endereco.getEndereco() );
+                c.startActivity(Intent.createChooser(intent2, "Envie para"));
             }
         });
     }

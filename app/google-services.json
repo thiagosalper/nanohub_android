@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "458158166448",
+    "firebase_url": "https://cotacao-raiblock.firebaseio.com",
+    "project_id": "cotacao-raiblock",
+    "storage_bucket": "cotacao-raiblock.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:458158166448:android:321eb9eb52c35d0f",
+        "android_client_info": {
+          "package_name": "com.thiagosalper.cotacaoraiblocks"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "458158166448-5n96k503dvktimbirk88qumk3l2pai3o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4MjuVZQ3-4Z2SdCdW5Je1u6UHs9ejqZg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

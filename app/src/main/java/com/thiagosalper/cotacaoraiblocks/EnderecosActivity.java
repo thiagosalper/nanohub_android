@@ -36,10 +36,12 @@ public class EnderecosActivity extends AppCompatActivity {
 
         ButterKnife.bind(this);
         SugarContext.init(this);
-        List<Endereco> lista = SugarRecord.listAll(Endereco.class);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Meus endereços");
+
+
+        List<Endereco> lista = SugarRecord.listAll(Endereco.class);
 
         gson     = new Gson();
         gson.toJson(lista);
@@ -49,6 +51,11 @@ public class EnderecosActivity extends AppCompatActivity {
         view_reciclada.setHasFixedSize(true);
         view_reciclada.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false));
 
+    }
+
+    @Override
+    public void onRestart(){
+        super.onRestart();
     }
 
     @OnClick(R.id.btrevisar) void addEndereco(){

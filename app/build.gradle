@@ -1,3 +1,12 @@
+plugins {
+    id 'com.onesignal.androidsdk.onesignal-gradle-plugin' version '0.8.0'
+}
+apply plugin: 'com.onesignal.androidsdk.onesignal-gradle-plugin'
+
+repositories {
+    maven { url 'https://maven.google.com' }
+}
+
 apply plugin: 'com.android.application'
 
 android {
@@ -6,9 +15,13 @@ android {
         applicationId "com.thiagosalper.cotacaoraiblocks"
         minSdkVersion 15
         targetSdkVersion 25
-        versionCode 9
-        versionName "1.7"
+        versionCode 10
+        versionName "1.8"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        manifestPlaceholders = [onesignal_app_id: "69340cca-42db-4828-bdde-30eeac0b8a90",
+                                // Project number pulled from dashboard, local value is ignored.
+                                onesignal_google_project_number: "REMOTE"]
     }
     buildTypes {
         release {
@@ -41,5 +54,8 @@ dependencies {
     compile 'com.karumi:dexter:3.0.1'
 
     compile 'com.github.satyan:sugar:1.4'
+    compile 'com.onesignal:OneSignal:[3.6.5, 3.99.99]'
 
 }
+
+apply plugin: 'com.google.gms.google-services'
