@@ -1,3 +1,126 @@
 <resources>
-    <string name="app_name">Cotação XRB/BRL</string>
+    <string name="app_name">NanoHub</string>
+    <string name="textosobre">
+        Olá, obrigado por experimentar o app. \n\nO app utiliza informações da CoinMarket e
+        da exchange brasileira MercadoBitcoin para calcular o valor Nano em R$. \n\nMelhorias e mais funções
+        estão constantemente sendo lançadas em atualizações, por isso, sua avaliação é de grande ajuda
+        para o crescimento do assunto.
+    </string>
+
+    <string name="textoajude">
+        O app foi desenvolvido para ajudar a comunidade, por um desenvolvedor mobile, em suas horas vagas (nas madrugadas) e
+        sem investimento de nenhum terceiro. \n\nAjude-o, pague um café com Nano pegando o endereço abaixo.
+        \n\nQuer ajudar de outra forma? Entre em contato na página do app na PlayStore.
+        \n\nMuito obrigado por ajudar a ideia a crescer!
+    </string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+
+    <string name="prefixo">R$</string>
+    <string name="prefixo_dolar">$</string>
+
+    <!-- MENU -->
+    <string name="calculadora">Calculadora</string>
+    <string name="venda">Venda</string>
+    <string name="minhas_carteiras">Minhas carteiras</string>
+    <string name="meus_saldos_menu">Meus saldos</string>
+    <string name="meus_alertas">Meus alertas</string>
+    <string name="exchanges_xrb">Exchanges Nano</string>
+    <string name="lojas_xrb">Lojas Nano</string>
+    <string name="sobre_o_app">Sobre o app</string>
+    <string name="ajude_a_crescer">Ajude a crescer</string>
+    <string name="compartilhe_o_app">Compartilhe o app</string>
+    <string name="ajude_o_desenvolvedor">Ajude o desenvolvedor</string>
+
+    <!-- Share -->
+    <string name="compartilhar_string">NanoHub Nano App</string>
+    <string name="compartilhar_com">Compartilhar com</string>
+    <string name="compartilhar">COMPARTILHAR</string>
+
+    <!-- carteira -->
+    <string name="add_carteira">ADD CARTEIRA</string>
+    <string name="minhas">MINHAS</string>
+    <string name="carteiras">CARTEIRAS</string>
+
+    <!-- carteira -->
+    <string name="add_alerta">ADD ALERTA</string>
+    <string name="meus">MEUS</string>
+    <string name="alertas">ALERTAS</string>
+    <string name="minha">MINHA</string>
+    <string name="carteira">CARTEIRA</string>
+    <string name="adicionar">ADICIONAR</string>
+    <string name="salvar">SALVAR</string>
+
+    <!-- sobre -->
+    <string name="sobre">SOBRE</string>
+    <string name="o_app">O APP</string>
+
+    <!-- ajude -->
+    <string name="ajude_com_xrb">AJUDE COM NANO</string>
+    <string name="ajude_a">AJUDE A</string>
+    <string name="crescer">CRESCER</string>
+
+    <!-- calculadora -->
+    <string name="xrb">NANO</string>
+    <string name="calculadora_titulo">CALCULAR</string>
+    <string name="calcular">CALCULAR</string>
+    <string name="quantidade_de_xrb">QUANTIDADE DE NANO</string>
+    <string name="valor_do_xrb">VALOR DO NANO</string>
+    <string name="save">SALVAR</string>
+    <string name="preencha_qtde">PREENCHA A QUANTIDADE</string>
+
+    <string name="aguarde">aguarde ...</string>
+    <string name="erro">ops! erro</string>
+
+    <!-- home -->
+    <string name="valor_btc">VALOR BTC</string>
+    <string name="ultima_hora">ÚLTIMA HORA</string>
+    <string name="ultimas_24h">ÚLTIMAS 24H</string>
+    <string name="historico">HISTÓRICO</string>
+
+    <!-- alerta -->
+    <string name="alerta_xrb">Alerta NANO</string>
+    <string name="alerta_texto">Variação na última hora: </string>
+    <string name="alerta_nome">Nome do alerta</string>
+    <string name="alerta_variacao">Variação %</string>
+    <string name="ativa_alerta">Ativar alertas </string>
+    <string name="alerta_off">Alertas inativo </string>
+    <string name="alerta_on">Alertas ativo </string>
+
+    <string name="cancelar">Cancelar</string>
+    <string name="confirmar">Confirmar</string>
+    <string name="remover_alerta">Confirma a remoção deste alerta?</string>
+    <string name="remover">Remover</string>
+    <string name="alerta_removido">Alerta removido!</string>
+
+    <string name="use_qrcode">UTILIZE O LEITOR QRCODE</string>
+    <string name="endereco_xrb">ENDEREÇO NANO</string>
+    <string name="nome_carteira">NOME DA CARTEIRA</string>
+
+    <string name="widget_label">NANO / BRL</string>
+
+    <!-- exchanges -->
+    <string name="lista_de">LISTA DE</string>
+    <string name="exchanges">EXCHANGES</string>
+
+    <!-- lojas -->
+    <string name="lojas">LOJAS</string>
+
+    <!-- saldo -->
+    <string name="meus_saldos">SALDOS</string>
+    <string name="meus_saldos_descricao">Meus saldos atualizados neste momento.</string>
+    <string name="informe_nome_saldo">Informe um nome para este saldo</string>
+
+    <string name="sucesso">Sucesso!</string>
+
+    <string name="deseja_remover">Deseja remover?</string>
+
+    <!-- venda -->
+    <string name="venda_titulo">VENDA</string>
+    <string name="venda_label">QUAL O VALOR DO PRODUTO?</string>
+    <string name="venda_moeda">QUAL SUA MOEDA?</string>
+
 </resources>
+

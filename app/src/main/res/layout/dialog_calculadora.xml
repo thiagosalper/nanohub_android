@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/txttitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:gravity="center"
+        android:text="Quanto valem meus XRBs?"
+        android:textAlignment="center"
+        android:textColor="@color/verde_escuro"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Quantidade de XRB"
+        android:textAlignment="center" />
+
+    <EditText
+        android:id="@+id/txtqtde"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/back_input"
+        android:ems="10"
+        android:hint="0.00000000"
+        android:inputType="numberDecimal"
+        android:textAlignment="center"
+        android:textStyle="bold" />
+
+    <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Total em BRL"-->
+        <!--android:textAlignment="center" />-->
+
+    <!--<EditText-->
+        <!--android:id="@+id/txtpreco"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginBottom="12dp"-->
+        <!--android:background="@drawable/back_input"-->
+        <!--android:ems="10"-->
+        <!--android:hint="R$ 0,00"-->
+        <!--android:inputType="numberDecimal"-->
+        <!--android:textAlignment="center"-->
+        <!--android:textStyle="bold" />-->
+
+    <TextView
+        android:id="@+id/txtresultado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="0.0"
+        android:textAlignment="center"
+        android:textColor="@color/colorAccent"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_marginTop="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btfechar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/branco"
+            android:textColor="@color/cinza1"
+            android:text="Fechar" />
+
+        <Button
+            android:id="@+id/btcalcular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/verde_escuro"
+            android:text="Calcular"
+            android:textColor="@color/branco" />
+    </LinearLayout>
+
+</LinearLayout>

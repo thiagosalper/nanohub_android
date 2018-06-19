@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back_widget_dark"
+    android:gravity="center_vertical|center_horizontal"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/txtvalor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/rubik"
+        android:text="0,00"
+        android:textColor="#fff"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txtvariacao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubik"
+            android:text="@string/widget_label"
+            android:textColor="@color/verde_claro"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btreload"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/ic_reflesh" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtbtc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="BTC 0.0000"
+        android:fontFamily="@font/rubik"
+        android:textColor="#999"
+        android:textSize="14sp"
+        android:textAlignment="center"
+        android:textStyle="" />
+
+</LinearLayout>

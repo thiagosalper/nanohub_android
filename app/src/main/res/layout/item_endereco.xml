@@ -13,45 +13,30 @@
         android:layout_alignParentStart="true"
         android:layout_toLeftOf="@+id/btshare"
         android:layout_toStartOf="@+id/btshare"
-        android:text="Nome aqui"
-        android:textColor="#999"
-        android:textSize="14sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/txtendereco"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/txtnome"
-        android:layout_toLeftOf="@+id/btshare"
-        android:layout_toStartOf="@+id/btshare"
-        android:text="endereco"
-        android:textColor="#999"
-        android:textIsSelectable="true"
-        android:textStyle="italic" />
+        android:fontFamily="@font/rubik"
+        android:textColor="@color/branco"
+        android:textSize="18sp" />
 
     <ImageButton
         android:id="@+id/btshare"
         android:layout_width="30dp"
         android:layout_height="30dp"
+        android:background="@null"
         android:layout_alignParentTop="true"
         android:layout_marginEnd="11dp"
         android:layout_marginRight="11dp"
         android:layout_toLeftOf="@+id/btremove"
         android:layout_toStartOf="@+id/btremove"
-        android:background="@color/branco"
         app:srcCompat="@drawable/ic_share" />
 
     <ImageButton
         android:id="@+id/btremove"
         android:layout_width="30dp"
         android:layout_height="30dp"
+        android:background="@null"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:background="@color/branco"
         app:srcCompat="@drawable/ic_remove" />
 
 </RelativeLayout>

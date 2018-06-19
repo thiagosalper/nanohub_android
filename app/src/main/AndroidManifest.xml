@@ -18,14 +18,21 @@
             android:value="cotacaoraiblock.db" />
         <meta-data
             android:name="VERSION"
-            android:value="1" />
+            android:value="3" />
         <meta-data
             android:name="QUERY_LOG"
             android:value="true" />
         <meta-data
             android:name="DOMAIN_PACKAGE_NAME"
             android:value="com.thiagosalper.cotacaoraiblocks.model" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
 
+        <service
+            android:name=".services.AlertaService"
+            android:enabled="true"
+            android:exported="true" />
         <service
             android:name=".services.WidgetServiceProvider"
             android:enabled="true"
@@ -40,16 +47,61 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/widget_info" />
         </receiver>
+        <receiver android:name=".WidgetProviderDark">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
 
-        <activity android:name=".MainActivity">
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_info_dark" />
+        </receiver>
+
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".EnderecosActivity" />
-        <activity android:name=".EnderecosAddActivity" />
+        <activity
+            android:name=".views.enderecos.EnderecosActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".views.enderecos.EnderecosAddActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".views.sobre.SobreActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".views.ajude.AjudeActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".views.enderecos.EnderecosDetalhesActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".views.alertas.AlertasActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".CalculadoraActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".views.alertas.AlertasAddActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".views.exchanges.ExchangeActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".views.lojas.LojasActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".views.saldos.SaldosActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".views.venda.VendaActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

@@ -1,10 +1,13 @@
 package com.thiagosalper.cotacaoraiblocks.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
+import com.thiagosalper.cotacaoraiblocks.views.enderecos.EnderecosDetalhesActivity;
 import com.thiagosalper.cotacaoraiblocks.holder.EnderecoHolder;
 import com.thiagosalper.cotacaoraiblocks.model.Endereco;
 
@@ -29,11 +32,21 @@ public class EnderecoAdapter extends RecyclerView.Adapter<EnderecoHolder>{
     }
     @Override
     public void onBindViewHolder(EnderecoHolder holder, int i) {
-        Endereco objeto = lista.get(i);
+        final Endereco objeto = lista.get(i);
 
         holder.txtnome.setText(objeto.getDescricao());
-        holder.txtendereco.setText(objeto.getEndereco());
+        //holder.txtendereco.setText(objeto.getEndereco());
         holder.endereco = objeto;
+
+        holder.itemView.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(v.getContext(), EnderecosDetalhesActivity.class);
+                intent.putExtra("endereco", objeto.getEndereco());
+                intent.putExtra("nome", objeto.getDescricao());
+                v.getContext().startActivity(intent);
+            }
+        });
     }
 
     @Override

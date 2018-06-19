@@ -1,4 +1,4 @@
-package com.thiagosalper.cotacaoraiblocks;
+package com.thiagosalper.cotacaoraiblocks.views.enderecos;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import com.orm.SugarContext;
 import com.orm.SugarRecord;
+import com.thiagosalper.cotacaoraiblocks.R;
 import com.thiagosalper.cotacaoraiblocks.model.Endereco;
 
 import butterknife.BindView;
@@ -31,10 +32,14 @@ public class EnderecosAddActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         SugarContext.init(this);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Adicionar Endereço");
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        getSupportActionBar().setTitle("Adicionar Endereço");
         
         
+    }
+
+    @OnClick(R.id.btqrcode) void clicaQrCode(){
+        Toast.makeText(this, "soon :)", Toast.LENGTH_SHORT).show();
     }
     
     @OnClick(R.id.btconcluir) void clicaConcluir(){

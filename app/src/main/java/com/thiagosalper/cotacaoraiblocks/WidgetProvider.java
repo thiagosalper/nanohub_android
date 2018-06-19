@@ -29,8 +29,6 @@ public class WidgetProvider extends AppWidgetProvider{
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
         final int count = appWidgetIds.length;
 
-        Log.w("WIDGET_XRB", "onUpdate method called");
-
         ComponentName thisWidget = new ComponentName(context, WidgetProvider.class);
         int[] allWidgetIds = appWidgetManager.getAppWidgetIds(thisWidget);
 

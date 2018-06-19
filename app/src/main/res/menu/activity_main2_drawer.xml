@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_calculadora"
+            android:icon="@drawable/ic_calculadora"
+            android:title="@string/calculadora" />
+        <item
+            android:id="@+id/nav_venda"
+            android:icon="@drawable/ic_venda"
+            android:title="@string/venda" />
+        <item
+            android:id="@+id/nav_carteiras"
+            android:icon="@drawable/ic_carteira"
+            android:title="@string/minhas_carteiras" />
+        <item
+            android:id="@+id/nav_alertas"
+            android:icon="@drawable/ic_alerta"
+            android:title="@string/meus_alertas" />
+        <item
+            android:id="@+id/nav_saldos"
+            android:icon="@drawable/ic_crescer"
+            android:title="@string/meus_saldos_menu" />
+        <item
+            android:id="@+id/nav_exchanges"
+            android:icon="@drawable/ic_enderecos"
+            android:title="@string/exchanges_xrb" />
+        <item
+            android:id="@+id/nav_lojas"
+            android:icon="@drawable/ic_nota"
+            android:title="@string/lojas_xrb" />
+        <item
+            android:id="@+id/nav_sobre"
+            android:icon="@drawable/ic_sobre"
+            android:title="@string/sobre_o_app" />
+    </group>
+
+    <item android:title="@string/ajude_a_crescer">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:title="@string/compartilhe_o_app" />
+            <item
+                android:id="@+id/nav_ajude"
+                android:title="@string/ajude_o_desenvolvedor" />
+        </menu>
+    </item>
+
+</menu>

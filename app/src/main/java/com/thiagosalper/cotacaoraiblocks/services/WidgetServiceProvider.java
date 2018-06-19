@@ -5,6 +5,7 @@ import android.app.Service;
 import android.appwidget.AppWidgetManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
@@ -34,12 +35,15 @@ public class WidgetServiceProvider extends Service implements ConsultaPresenter 
     RemoteViews remoteViews;
     int[] allWidgetIds;
     AppWidgetManager appWidgetManager;
+    String LANG;
 
     @Override
     public void onStart(Intent intent, int startId) {
         appWidgetManager = AppWidgetManager.getInstance(this.getApplicationContext());
 
         allWidgetIds = intent.getIntArrayExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS);
+
+        LANG = Resources.getSystem().getConfiguration().locale.getLanguage();
 
         consulta = new ConsultaApi();
         consulta.busca(contexto);
@@ -92,7 +96,7 @@ public class WidgetServiceProvider extends Service implements ConsultaPresenter 
 
     @Override
     public void mostrar(Moeda valor) {
-        Log.d("RETORNO", "-"+valor);
+        //Log.d("RETORNO", "-"+valor);
 
         for (int widgetId : allWidgetIds) {
             remoteViews = new RemoteViews(this.getApplicationContext().getPackageName(), R.layout.widget_cotacao);
@@ -102,14 +106,22 @@ public class WidgetServiceProvider extends Service implements ConsultaPresenter 
             clickIntent.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE);
             clickIntent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, allWidgetIds);
 
-            remoteViews.setTextViewText(R.id.txtvalor, "R$ " + valor.getValor_real());
+            // para valor no brasil
+            if(LANG.equals("pt")) {
+                remoteViews.setTextViewText(R.id.txtvalor, getString(R.string.prefixo) + " " + valor.getValor_real());
+            }else{
+                remoteViews.setTextViewText(R.id.txtvalor, getString(R.string.prefixo) + " " + valor.getPrice_usd());
+            }
+
+            remoteViews.setTextViewText(R.id.txtbtc,  "BTC " + valor.getPrice_btc());
+
             remoteViews.setViewVisibility(R.id.btreload, View.VISIBLE);
 
             Float crescimento24 = Float.parseFloat(valor.getPercent_change_24h());
             if(crescimento24>0){
-                remoteViews.setTextColor(R.id.txtcrescimento, getResources().getColor(R.color.verde));
+                remoteViews.setTextColor(R.id.txtbtc, getResources().getColor(R.color.verde));
             }else{
-                remoteViews.setTextColor(R.id.txtcrescimento, getResources().getColor(R.color.vermelho));
+                remoteViews.setTextColor(R.id.txtbtc, getResources().getColor(R.color.vermelho));
             }
 
             PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 0, clickIntent, PendingIntent.FLAG_UPDATE_CURRENT);
@@ -117,6 +129,7 @@ public class WidgetServiceProvider extends Service implements ConsultaPresenter 
             appWidgetManager.updateAppWidget(widgetId, remoteViews);
         }
     }
+
 
     @Override
     public IBinder onBind(Intent intent) {

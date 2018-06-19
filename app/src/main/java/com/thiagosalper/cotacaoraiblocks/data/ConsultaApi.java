@@ -84,7 +84,7 @@ public class ConsultaApi implements ConsultaData {
     @Override
     public void buscaRaiBlocks() {
         AsyncHttpClient client = new AsyncHttpClient();
-        client.get("https://api.coinmarketcap.com/v1/ticker/raiblocks/", new JsonHttpResponseHandler() {
+        client.get("https://api.coinmarketcap.com/v1/ticker/nano/", new JsonHttpResponseHandler() {
             @Override
             public void onStart() { }
             @Override

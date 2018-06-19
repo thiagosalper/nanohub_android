@@ -1,4 +1,4 @@
-package com.thiagosalper.cotacaoraiblocks;
+package com.thiagosalper.cotacaoraiblocks.views.enderecos;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +11,7 @@ import android.widget.Button;
 import com.google.gson.Gson;
 import com.orm.SugarContext;
 import com.orm.SugarRecord;
+import com.thiagosalper.cotacaoraiblocks.R;
 import com.thiagosalper.cotacaoraiblocks.adapter.EnderecoAdapter;
 import com.thiagosalper.cotacaoraiblocks.model.Endereco;
 
@@ -37,8 +38,8 @@ public class EnderecosActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         SugarContext.init(this);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Meus endereços");
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        getSupportActionBar().setTitle("Meus endereços");
 
 
         List<Endereco> lista = SugarRecord.listAll(Endereco.class);

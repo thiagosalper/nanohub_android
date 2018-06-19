@@ -27,7 +27,6 @@ import butterknife.ButterKnife;
 
 public class EnderecoHolder extends RecyclerView.ViewHolder {
     @BindView(R.id.txtnome) public TextView txtnome;
-    @BindView(R.id.txtendereco) public TextView txtendereco;
     @BindView(R.id.btremove) public ImageButton btremove;
     @BindView(R.id.btshare) public ImageButton btshare;
 
@@ -37,6 +36,7 @@ public class EnderecoHolder extends RecyclerView.ViewHolder {
         super(inflater.inflate(R.layout.item_endereco, parent, false));
         ButterKnife.bind(this, itemView);
         SugarContext.init(itemView.getContext());
+
         final Context cc = parent.getContext();
 
 
